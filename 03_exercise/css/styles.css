@@ -1,33 +1,40 @@
 /* Text Elements */
 
 h1 {
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
   color: #dae4e9;
-  letter-spacing: -.015em;
+  letter-spacing: -0.015em;
   font-weight: 700;
   font-size: 16vmin;
-  font-family: 'Arimo', cursive;
-  line-height: 1;
+  font-family: "Arimo", cursive;
+  padding: 0 5rem 0 5rem;
 }
 
 aside p {
   text-indent: 0vw;
   font-weight: 700;
-  font-size: .9rem;
-  font-family: 'Arimo', cursive;
+  font-size: 0.9rem;
+  font-family: "Arimo", cursive;
+}
+h1 span {
+  color: #ff3b6c;
 }
 
 p {
   margin-bottom: 0;
   color: #dae4e9;
   text-indent: 2vw;
-  font-size: .8rem;
-  font-family: 'Lora', cursive;
+  font-size: 0.8rem;
+  font-family: "Lora", cursive;
+  line-height: 1.6;
+  width: 75%;
+  margin: 0 auto;
 }
 
 /* Layout Elements */
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -45,7 +52,7 @@ main {
 }
 
 img {
-  max-width: none;
+  max-width: 100%;
 }
 
 .fig-1 {
@@ -73,6 +80,9 @@ picture {
 
   aside {
     grid-area: aside;
+    display: flex;
+    flex-direction: column-reverse;
+    line-height: 1.6;
   }
 
   section {
@@ -82,7 +92,13 @@ picture {
 
   main {
     display: grid;
-
+    grid-template-areas:
+      "fig-1 aside aside aside"
+      ". title title title"
+      "banner banner banner banner"
+      "banner banner banner banner"
+      "banner banner banner banner"
+      ". . main main";
     grid-column-gap: 2vw;
   }
 
@@ -97,7 +113,7 @@ picture {
 
 @media screen and (min-width: 40rem) {
   @supports (display: grid) {
-      /* Layout Elements */
+    /* Layout Elements */
 
     main {
       padding-top: 2vh;
@@ -111,32 +127,32 @@ picture {
   }
 
   @supports (display: grid) {
-      /* Layout Elements */
+    /* Layout Elements */
 
     main {
       padding-right: 0vw;
       padding-left: 0vw;
 
-      grid-template-areas: '. aside . fig-2 fig-2' 'title title banner banner banner' 'fig-1 main banner banner banner';
-      grid-template-rows: repeat(3 , auto);
-      grid-template-columns: repeat(5 , 1fr);
+      grid-template-areas: ". aside . fig-2 fig-2" "title title banner banner banner" "fig-1 main banner banner banner";
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: repeat(5, 1fr);
     }
 
     section {
       -webkit-column-width: 12em;
-         -moz-column-width: 12em;
-              column-width: 12em;
+      -moz-column-width: 12em;
+      column-width: 12em;
       -webkit-column-gap: 1.5rem;
-         -moz-column-gap: 1.5rem;
-              column-gap: 1.5rem;
+      -moz-column-gap: 1.5rem;
+      column-gap: 1.5rem;
     }
 
     picture {
-        max-width: 800px;
+      max-width: 800px;
     }
 
     .fig-2 {
-      margin-bottom: .75rem;
+      margin-bottom: 0.75rem;
 
       grid-area: fig-2;
     }
